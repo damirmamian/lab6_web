@@ -9,17 +9,39 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/contact', async (req, res) => {
-    console.log("Отримано дані:", req.body);
     const { name, email, subject, message } = req.body;
-
     if (!name || !email || !subject || !message) {
         return res.status(400).json({ error: "Всі поля обов'язкові" });
     }
 
     try {
-        res.status(200).json({ message: "Дані отримано на бекенді!" });
+        let testAccount = await nodemailer.createTestAccount();
+        const transporter = nodemailer.createTransport({
+            host: "smtp.ethereal.email",
+            port: 587,
+            secure: false,
+            auth: {
+                user: testAccount.user,
+                pass: testAccount.pass,
+            },
+        });
+        let info = await transporter.sendMail({
+            from: `"${name}" <${email}>`,
+            to: "damirmamian@gmail.com",
+            subject: `Лаба 6: ${subject}`,
+            text: message,
+            html: `<p><strong>Від:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message}</p>`,
+        });
+        const previewUrl = nodemailer.getTestMessageUrl(info);
+        console.log("Лист надіслано! Переглянути тут:", previewUrl);
+        res.status(200).json({
+            message: "Лист надіслано!",
+            preview: previewUrl
+        });
+
     } catch (error) {
-        res.status(500).json({ error: "Помилка сервера" });
+        console.error("Помилка Nodemailer:", error);
+        res.status(500).json({ error: "Помилка при відправці пошти" });
     }
 });
 
