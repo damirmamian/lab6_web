@@ -74,12 +74,9 @@ window.onkeydown = (event) => {
     }
 };
 
-// Оновлений обробник для Node.js бекенду
 form.onsubmit = async (e) => {
     e.preventDefault();
     console.log("Кнопка натиснута, починаємо відправку...");
-
-    // Отримуємо дані безпосередньо з елементів форми
     const formData = {
         name: form.querySelector('[name="name"]')?.value,
         email: form.querySelector('[name="email"]')?.value,
@@ -115,7 +112,7 @@ form.onsubmit = async (e) => {
 
 setTimeout(() => {
     modal.style.display = 'flex';
-}, 60);
+}, 600);
 
 // 4
 const themeToggle = document.getElementById('theme-toggle');
