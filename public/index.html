@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Damir Mamian</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <button id="theme-toggle" class="theme-btn">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+    </button>
+    <div class="cv-container">
+        <header class="cv-header">
+            <h1>Damir Mamian</h1>
+            <p class="title">Junior Frontend Developer</p>
+            <nav class="contact">
+                <a href="">+380(66)*** ** ** </a>
+                <a href="mailto:damirmamian@gmail.com">damirmamian@gmail.com</a>
+                <a href="https://share.google/CYZM2zUn7QwiFQHs9">Lviv, Ukraine</a>
+            </nav>
+        </header>
+        <div class="cv-body">
+            <aside class="sidebar">
+                <section>
+                    <h2>Profile</h2>
+                    <p>
+                        Motivated student with strong learning and technical skills.
+                        Experienced in project management, web development and team collaboration.
+                    </p>
+                </section>
+                <section>
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Typescript</li>
+                        <li>Git</li>
+                        <li>Figma</li>
+                        <li>Vite</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>English — Fluent</li>
+                        <li>Ukrainian — Native</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Links</h2>
+                    <ul class="links">
+                        <a>LinkedIn</a>
+                        <a>GitHub</a>
+                        <a>Djinni</a>
+                    </ul>
+                </section>
+            </aside>
+            <main>
+                <section>
+                    <h2>Education</h2>
+                    <div class="item">
+                        <h3>Cybersecurity</h3>
+                        <span class="date">2024 - 2028</span>
+                        <p>Lviv Polytechnic National University</p>
+                    </div>
+                </section>
+                <section>
+                    <h2>Experience</h2>
+                    <div class="item">
+                        <h3>Coffee Joy</h3>
+                        <p>
+                            CoffeeJoy, a responsive coffee shop website using HTML, CSS, and modern layout techniques,
+                            featuring a hero banner, structured sections, and engaging coffee branding.
+                        </p>
+                        <ul class="techs">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>Paw House</h3>
+                        <p>
+                            An adaptive website designed to promote pet adoption and support animals from the shelter.
+                            The platform
+                            features a clean UI, structured layout, and responsive design to present cats and dogs
+                            waiting for a home. The project
+                            focuses on user-friendly navigation and modern front-end styling to create an engaging and
+                            compassionate browsing
+                            experience
+                        </p>
+                        <ul class="techs">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>Vite</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Contact Me</h2>
+            <form id="fs-form" class="modal-form">
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="module" src="main.js"></script>
+
+</html>

@@ -1,0 +1,339 @@
+/* ===== Reset ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f5f5;
+}
+
+
+/* ===== Layout ===== */
+
+.cv-container {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cv-body {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+
+/* ===== Header ===== */
+
+.cv-header {
+  background: #111;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+.cv-header h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+.cv-header .title {
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.contact {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #bcbaba;
+}
+
+
+/* ===== Sidebar ===== */
+
+.sidebar {
+  background: #fafafa;
+  padding: 30px;
+  border-right: 1px solid #eee;
+}
+
+.sidebar section {
+  margin-bottom: 30px;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.sidebar li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.links a {
+  color: #444;
+}
+
+
+/* ===== Main ===== */
+
+main {
+  padding: 40px;
+}
+
+main section {
+  margin-bottom: 35px;
+}
+
+main h2 {
+  font-size: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* ===== Items ===== */
+
+.item {
+  margin-bottom: 20px;
+}
+
+.item h3 {
+  font-size: 18px;
+}
+
+.item p {
+  font-size: 16px;
+  color: #444;
+  padding: 8px 0;
+}
+
+.date {
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/* ===== Technologies ===== */
+
+.techs {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.techs li {
+  padding: 4px 10px;
+  border-radius: 12px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
+}
+
+.techs li:hover {
+  transform: scale(1.1);
+  background-color: #f7f7f7;
+}
+
+
+/* modal */
+/* Фоновий шар (Backdrop) */
+.modal {
+  display: none;
+  /* Приховано за замовчуванням */
+  position: fixed;
+  z-index: 1000;
+  /* Поверх усього */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Темний напівпрозорий фон */
+  backdrop-filter: blur(4px);
+  /* Ефект розмиття фону */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контентне вікно */
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Кнопка закриття (хрестик) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Стилізація форми всередині модалки */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form input,
+.modal-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* 4 */
+:root {
+  --bg-color: #f4f7f6;
+  --container-bg: #ffffff;
+  --sidebar-bg: #fdfdfd;
+  --text-main: #333333;
+  --text-secondary: #555555;
+  --accent-color: #007bff;
+  --border-color: #eeeeee;
+  --modal-bg: #ffffff;
+  --input-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --sidebar-bg: #252525;
+  --text-main: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --accent-color: #4dabf7;
+  --border-color: #333333;
+  --modal-bg: #2d2d2d;
+  --input-bg: #3d3d3d;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cv-container {
+  background-color: var(--container-bg);
+  color: var(--text-main);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+}
+
+
+section {
+  border-bottom: 1px solid var(--border-color);
+}
+
+li,
+span {
+  color: var(--text-secondary);
+}
+
+.modal-content {
+  background-color: var(--modal-bg);
+  color: var(--text-main);
+}
+
+.modal-form input,
+.modal-form textarea {
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: var(--text-main);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  z-index: 1001;
+  transition: transform 0.2s;
+}
+
+.theme-btn:active {
+  transform: scale(0.9);
+}   
